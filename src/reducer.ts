@@ -1,14 +1,13 @@
-import {LinkedListNode} from "./types/LinkedListNode";
 import {Task} from "./types/Task";
 import {AnyAction} from "redux";
 import {addAction, invertAction, removeAction} from "./actions";
 
 type TasksState = {
-    headTask: LinkedListNode<Task> | null;
+    tasks: Task[];
 }
 
 const initialState: TasksState = {
-    headTask: null
+    tasks: []
 }
 
 export function tasksReducer(state: TasksState = initialState, action: AnyAction): TasksState {
